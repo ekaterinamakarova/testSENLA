@@ -51,11 +51,39 @@ public class Start {
     public static void task3()
     {
         System.out.println("Input numbers");
-        int[] numbers= new int[3];
+        String[] charNumbers=new String[3];
         for(int i=0; i<3; i++){
-            numbers[i]= sc.nextInt();
+            charNumbers[i]= sc.next();
+        }
+        String[] result =new String[3];
+        for(int i=0; i<charNumbers.length; i++)
+        {
+            result[0]=charNumbers[i];
+            for(int j=1; j<result.length;j++)
+            {
+                result[j]=charNumbers[0];
+            }
+            iteration(result,1,charNumbers);
+
+
         }
 
 
+    }
+    public static void iteration(String[] ch, int number, String[] numbers)
+    {
+
+        for(int i=0; i<numbers.length-1;i++)
+        {
+            ch[number] = numbers[i];
+            if(number<ch.length-1)
+            {
+                iteration(ch, number+1, numbers);
+            }
+            else
+            {
+                System.out.println(String.join(" ",ch));
+            }
+        }
     }
 }
