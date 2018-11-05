@@ -66,12 +66,12 @@ public class Start {
             {
                 result[j]=charNumbers[0];
             }
-            interation(result,1,charNumbers);
+            iteration(result,1,charNumbers);
         }
 
 
     }
-    public static void interation(String[] ch, int stage,String[] charNumbers)
+    public static void iteration(String[] ch, int stage,String[] charNumbers)
     {
 
         for(int i=0; i<charNumbers.length;i++)
@@ -79,7 +79,7 @@ public class Start {
             ch[stage] = charNumbers[i];
             if(stage<ch.length-1)
             {
-                interation(ch, stage+1, charNumbers);
+                iteration(ch, stage+1, charNumbers);
             }
             else
             {
