@@ -13,8 +13,8 @@ public class Department {
         this.positions = positions;
     }
 
-    public List<Imployee> getImployees(Position position)
+    public List<Employee> getEmployees(Position position)
     {
-        return position.getImployees();
+        return position.getEmployees();
     }
 }

@@ -3,13 +3,13 @@ package makarova.ekaterina.part2.task1;
 import java.util.List;
 
 public class Position {
-    private List<Imployee> imployees;
+    private List<Employee> employees;
 
-    public List<Imployee> getImployees() {
-        return imployees;
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setImployees(List<Imployee> imployees) {
-        this.imployees = imployees;
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }
