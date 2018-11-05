@@ -10,12 +10,30 @@ public class Start {
         task1();
         task2();
         task3();
+    }
 
+    public static void task1() {
+        System.out.println("Input the sentence");
+        String sentence = sc.nextLine();
+        System.out.println("Inital sentence: " + sentence);
+        StringTokenizer stringTokenizer = new StringTokenizer(sentence,", ");
+        System.out.println("Number of words: " + stringTokenizer.countTokens());
+        String[] words = new String[stringTokenizer.countTokens()];
+        for(int i=0; i<words.length;i++ )
+        {
+            words[i] = stringTokenizer.nextToken().toLowerCase();
+        }
+        Arrays.sort(words);
+        System.out.println("Sorted sentence: ");
+        for(int i=0; i<words.length;i++ )
+        {
+            System.out.print(words[i]+ " ");
+        }
     }
     public static void task2(){
         System.out.println("Input N");
         int n= sc.nextInt();
-        System.out.println(n);
+        System.out.println("All the even numbers and their sum in sequence from 0 till " + n + " is");
         int sum=0;
         for(int i=2; i<=n; i+=2)
         {
@@ -31,54 +49,37 @@ public class Start {
             System.out.println("= "+sum);
         }
     }
-    public static void task1() {
-        System.out.println("Input the sentence");
-        String sentence = sc.nextLine();
-        System.out.println(sentence);
-        StringTokenizer stringTokenizer = new StringTokenizer(sentence,", ");
-        System.out.println( stringTokenizer.countTokens());
-        String[] words = new String[stringTokenizer.countTokens()];
-        for(int i=0; i<words.length;i++ )
-        {
-            words[i] = stringTokenizer.nextToken().toLowerCase();
-        }
-        Arrays.sort(words);
-        for(int i=0; i<words.length;i++ )
-        {
-            System.out.println(words[i]);
-        }
-    }
     public static void task3()
     {
-        System.out.println("Input numbers");
+
         String[] charNumbers=new String[3];
         for(int i=0; i<3; i++){
+            System.out.println("Input number " +(i+1));
             charNumbers[i]= sc.next();
         }
-        String[] result =new String[3];
+        System.out.println("The result is:");
         for(int i=0; i<charNumbers.length; i++)
         {
+            String[] result =new String[3];
             result[0]=charNumbers[i];
             for(int j=1; j<result.length;j++)
             {
                 result[j]=charNumbers[0];
             }
-            iteration(result,1,charNumbers);
-
-
+            interation(result,1,charNumbers);
         }
 
 
     }
-    public static void iteration(String[] ch, int number, String[] numbers)
+    public static void interation(String[] ch, int stage,String[] charNumbers)
     {
 
-        for(int i=0; i<numbers.length-1;i++)
+        for(int i=0; i<charNumbers.length;i++)
         {
-            ch[number] = numbers[i];
-            if(number<ch.length-1)
+            ch[stage] = charNumbers[i];
+            if(stage<ch.length-1)
             {
-                iteration(ch, number+1, numbers);
+                interation(ch, stage+1, charNumbers);
             }
             else
             {
