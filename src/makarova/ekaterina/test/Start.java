@@ -8,7 +8,7 @@ public class Start {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args){
         task1();
-        task2();
+        task2()
 
     }
     public static void task2(){
