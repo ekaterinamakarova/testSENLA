@@ -5,11 +5,14 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Start {
-
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args){
+        task1();
+        task2();
 
+    }
+    public static void task2(){
         System.out.println("Input N");
-        Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
         System.out.println(n);
         int sum=0;
@@ -26,11 +29,9 @@ public class Start {
         {
             System.out.println("= "+sum);
         }
-
     }
-    public static void Task1() {
+    public static void task1() {
         System.out.println("Input the sentence");
-        Scanner sc = new Scanner(System.in);
         String sentence = sc.nextLine();
         System.out.println(sentence);
         StringTokenizer stringTokenizer = new StringTokenizer(sentence,", ");
